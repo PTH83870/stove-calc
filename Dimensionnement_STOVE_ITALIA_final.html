@@ -41,9 +41,26 @@
             .main-box, .verdict { grid-column: span 1; }
             .bar-label { width: 60px; font-size: 0.7em; }
         }
+
+        .author-badge {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            background: #1a73e8;
+            color: white;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 0.78em;
+            font-weight: bold;
+            line-height: 1.5;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+        .author-badge span { display: block; font-weight: normal; font-size: 0.95em; opacity: 0.9; }
     </style>
 </head>
 <body>
+<div class="author-badge">James PHAN<span>STOVE ITALIA</span></div>
 <div class="container">
     <h2>Dimensionnement &amp; Analyse Énergétique - STOVE ITALIA</h2>
     
