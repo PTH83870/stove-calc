@@ -42,27 +42,70 @@
             .bar-label { width: 60px; font-size: 0.7em; }
         }
 
+        /* Badge auteur fixe */
         .author-badge {
             position: fixed;
-            top: 15px;
-            left: 15px;
-            background: #1a73e8;
+            top: 12px;
+            left: 12px;
+            background: linear-gradient(135deg, #2c2c2c, #4a4a4a);
             color: white;
-            padding: 8px 14px;
-            border-radius: 8px;
+            padding: 10px 14px;
+            border-radius: 10px;
             font-size: 0.78em;
             font-weight: bold;
-            line-height: 1.5;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            line-height: 1.6;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.3);
             z-index: 1000;
+            border: 1px solid #666;
         }
-        .author-badge span { display: block; font-weight: normal; font-size: 0.95em; opacity: 0.9; }
+        .author-badge .author-name { font-size: 1em; font-weight: bold; color: #fff; }
+        .author-badge .author-info { font-weight: normal; opacity: 0.85; font-size: 0.9em; display: block; }
+        .author-badge a { color: #90caf9; text-decoration: none; }
+
+        /* Logo */
+        .logo-container { text-align: center; margin-bottom: 15px; padding-top: 10px; }
+        .logo-container img { max-height: 60px; width: auto; }
+
+        /* Bouton PDF */
+        .pdf-btn {
+            display: block;
+            width: fit-content;
+            margin: 20px auto 0 auto;
+            background: #1a73e8;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(26,115,232,0.3);
+        }
+        .pdf-btn:hover { background: #1557b0; }
+
+        /* Print / PDF styles */
+        @media print {
+            .author-badge { position: fixed !important; top: 10px; left: 10px; }
+            .pdf-btn { display: none !important; }
+            body { background: white; padding: 5px; }
+            .container { box-shadow: none; }
+        }
     </style>
 </head>
 <body>
-<div class="author-badge">James PHAN<span>STOVE ITALIA</span></div>
+<div class="author-badge">
+    <div class="author-name">James PHAN</div>
+    <a href="mailto:tech2@stoveitalia.it" class="author-info">✉ tech2@stoveitalia.it</a>
+    <span class="author-info">📞 04 94 15 15 75</span>
+    <span class="author-info">📱 WhatsApp : 06 16 27 94 47</span>
+</div>
+
+<div style="padding-top: 60px;">
 <div class="container">
-    <h2>Dimensionnement &amp; Analyse Énergétique - STOVE ITALIA</h2>
+    <div class="logo-container">
+        <img src="data:image/png;base64,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Vtbaqujc0OE0TmYPmFuLBONzyQchkDqWyUVG85fFExh8y1oBXg2nklJ4GOd7FvTNfVzEM9RpxlbsETIWBjBsEHAlt1U7+CT718UdtqmV0EjoXBrXgk58wpMiDA5bqlv7RWmNS3+8WWaxWmoro4IJRKYy0AEubgbkbq6kQfli36A13EAH6dqxgeLf/srD7KdOajteqYam5WqopoWxPBe4t58PtVyIg5FdRyyyvc2M4JXLqbTVuBLYCee2VK0QcS22GhZRMbV0rJJcekXblez9OWR/rW2A/FdVEFf630jn5NPYqFocOJssbBz8DuuDT6d1ACCbZOPe1W8iCG6LpLrQVj46yiljilbu7IwCF3qyic/Ia0H2FdREETrLNVPyGwl3vXFrdN3F5PDRud57KxkQU7XaQvL8ltvlI/wrd7TNO3y43ehlt9ulnjjo2Rvc0gAOBdtz8wrVRBQ0ej9Ug72io+Lf1Uo0BYb5bb+yrrLdNFG2J4yS0742Voog5ULKsPLnREZOVvBrnsw9pBXuiDx+TQkelG13tXw6hpTzgZ8Fsogjd8tD3TB1JBlhHJviuJUWG4u9Wkcfgp+iCNaKpK+hinpaqnkjiyHsyRz6/cFJURAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBfMgBYQfBEQZY0NaA0ABZREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQf/9k=" alt="STOVE ITALIA">
+    </div>
+    <h2>Dimensionnement &amp; Analyse Énergétique</h2>
     
     <div class="section-title">Données Habitat</div>
     <div class="grid">
@@ -267,6 +310,13 @@ function calculer() {
 }
 
 window.onload = function() { calculer(); };
+
+function imprimer() {
+    window.print();
+}
 </script>
+<button class="pdf-btn" onclick="imprimer()">📄 Exporter en PDF</button>
+</div>
+</div>
 </body>
 </html>
